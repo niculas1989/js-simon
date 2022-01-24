@@ -27,3 +27,12 @@ for (let i = 0; i < 5; i++) {
 
 //| mostro il risultato all'utente: questi saranno i numeri che dovrà ricordarsi
 const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
+
+//| dopo che l'utente preme "ok" dovrà partire un timer di TOT secondi
+
+
+
+//| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
+
+//# se l'utente ha scritto il numero corretto segnarlo
+//# altrimenti dire che ha sbagliato
