@@ -18,6 +18,7 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)
 let result = 0;
 let finalResult = [];
 
+
 for (let k = 0; k < 5; k++) {
     result = getRandomNumber(1, 100);
     finalResult.push(result);
@@ -37,11 +38,14 @@ const timeOut = setTimeout(() => {
     let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
         let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
+
         if (finalResult.includes(userResult)) {
             finalUserResult.push(userResult);
         }
+
     }
     console.log(`Hai indovinato ${finalUserResult.length} numeri: ${finalUserResult}`);
+    alert(`Hai indovinato ${finalUserResult.length} numeri: ${finalUserResult}`);
 
 }, 3000);
 
