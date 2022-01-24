@@ -55,6 +55,12 @@ setTimeout(function () {
     //! creare un rapporto tra i due array per capire se i numeri sono uguali
     //! a questo punto ho due insieme di numeri, devo capire se l'utente ha inseriro numeri uguali al primo insieme o meno
 
+
+    // # se l'ha inserito, inserire il numero corretto in un "risultato"
+    // # altrimenti andare avanti e considerare il successivo
+    // # sicuro ci vorrà un "contatore" - per me un ciclo FOR
+    // # che per 5 volte confronta i numeri tra di loro
+
 }, 3000);
 
 
