@@ -41,12 +41,15 @@ const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
 
 //| dopo che l'utente preme "ok" dovrà partire un timer di TOT secondi
 
-setTimeout(function () {
+const timeOut = setTimeout(() => {
     //| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
     let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
         let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
         finalUserResult.push(userResult);
+        if (userResult === finalResult[k]) {
+            console.log('ok');
+        }
     }
     console.table(finalUserResult);
 
