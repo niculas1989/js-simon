@@ -16,21 +16,20 @@ const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)
 
 //| 'ciclo' in cui poter generare TOT numeri random - la traccia ci dice che saranno 5
 let result = 0;
+/*
 let firstResult = [
     { numero: 0 },
     { numero: 0 },
     { numero: 0 },
     { numero: 0 },
     { numero: 0 },
-];
+];*/
 
 let finalResult = [];
 
-for (let k = 0; k < firstResult.length; k++) {
-    let { numero } = firstResult[k];
-    numero = getRandomNumber(1, 100);
-
-    finalResult.push(numero);
+for (let k = 0; k < 5; k++) {
+    result = getRandomNumber(1, 100);
+    finalResult.push(result);
 }
 
 console.table(finalResult);
@@ -43,20 +42,20 @@ const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
 
 const timeOut = setTimeout(() => {
     //| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
-
+    /*
     let firstUserResult = [
         { numero: 0 },
         { numero: 0 },
         { numero: 0 },
         { numero: 0 },
         { numero: 0 },
-    ];
+    ];*/
     let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
         let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
-        let { numero } = firstUserResult;
-        numero = userResult;
-        finalUserResult.push(userResult);
+        if (finalResult.includes(userResult)) {
+            finalUserResult.push(userResult);
+        }
     }
     console.table(finalUserResult);
 
