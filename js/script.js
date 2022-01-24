@@ -43,13 +43,20 @@ const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
 
 const timeOut = setTimeout(() => {
     //| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
+
+    let firstUserResult = [
+        { numero: 0 },
+        { numero: 0 },
+        { numero: 0 },
+        { numero: 0 },
+        { numero: 0 },
+    ];
     let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
         let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
+        let { numero } = firstUserResult;
+        numero = userResult;
         finalUserResult.push(userResult);
-        if (userResult === finalResult[k]) {
-            console.log('ok');
-        }
     }
     console.table(finalUserResult);
 
