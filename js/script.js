@@ -35,14 +35,26 @@ setTimeout(function () {
     //| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
     let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
-        let userResult = prompt('Inserisci uno dei numeri che hai visto prima');
+        let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
         finalUserResult.push(userResult);
     }
     console.log(finalUserResult);
+
+
+
+    //! creare un rapporto tra i due array per capire se i numeri sono uguali
+
+    for (let j = 0; j < finalResult.length; j++) {
+        //# se l'utente ha scritto il numero corretto segnarlo
+        if (finalResult[j] === finalUserResult) {
+            console.log('Bravo');
+        } else {
+            //# altrimenti dire che ha sbagliato
+            console.log('No');
+        }
+    }
 }, 5000);
 
 
 
 
-//# se l'utente ha scritto il numero corretto segnarlo
-//# altrimenti dire che ha sbagliato
