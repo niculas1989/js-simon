@@ -43,16 +43,8 @@ setTimeout(function () {
 
 
     //! creare un rapporto tra i due array per capire se i numeri sono uguali
+    //! a questo punto ho due insieme di numeri, devo capire se l'utente ha inseriro numeri uguali al primo insieme o meno
 
-    for (let j = 0; j < finalResult.length; j++) {
-        //# se l'utente ha scritto il numero corretto segnarlo
-        if (finalResult[j] === finalUserResult) {
-            console.log('Bravo');
-        } else {
-            //# altrimenti dire che ha sbagliato
-            console.log('No');
-        }
-    }
 }, 5000);
 
 
