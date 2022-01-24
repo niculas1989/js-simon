@@ -12,19 +12,29 @@ controllare che l'utente non inserisca 2 volte lo stesso numero
 */
 
 //| funzione per generare numeri random
-function getRandomNumber(min, max) {
-    max++;
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 //| 'ciclo' in cui poter generare TOT numeri random - la traccia ci dice che saranno 5
 let result = 0;
+let firstResult = [
+    { numero: 0 },
+    { numero: 0 },
+    { numero: 0 },
+    { numero: 0 },
+    { numero: 0 },
+];
+
 let finalResult = [];
-for (let i = 0; i < 5; i++) {
-    result = getRandomNumber(1, 100);
-    finalResult.push(result);
+
+for (let k = 0; k < firstResult.length; k++) {
+    let { numero } = firstResult[k];
+    numero = getRandomNumber(1, 100);
+
+    finalResult.push(numero);
 }
-console.log(finalResult);
+
+console.table(finalResult);
+
 
 //| mostro il risultato all'utente: questi saranno i numeri che dovrà ricordarsi
 const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
@@ -38,14 +48,14 @@ setTimeout(function () {
         let userResult = parseInt(prompt('Inserisci uno dei numeri che hai visto prima'));
         finalUserResult.push(userResult);
     }
-    console.log(finalUserResult);
+    console.table(finalUserResult);
 
 
 
     //! creare un rapporto tra i due array per capire se i numeri sono uguali
     //! a questo punto ho due insieme di numeri, devo capire se l'utente ha inseriro numeri uguali al primo insieme o meno
 
-}, 5000);
+}, 3000);
 
 
 
