@@ -19,10 +19,10 @@ function getRandomNumber(min, max) {
 
 //| 'ciclo' in cui poter generare TOT numeri random - la traccia ci dice che saranno 5
 let result = 0;
-let finalResult = '';
+let finalResult = [];
 for (let i = 0; i < 5; i++) {
     result = getRandomNumber(1, 100);
-    finalResult += result + ' ';
+    finalResult.push(result);
 }
 console.log(finalResult);
 
@@ -31,19 +31,18 @@ const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
 
 //| dopo che l'utente preme "ok" dovrà partire un timer di TOT secondi
 
-setTimeout(resultElement => {
-    let userResult;
-    let finalUserResult = '';
+setTimeout(function () {
+    //| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
+    let finalUserResult = [];
     for (let k = 0; k < 5; k++) {
-        userResult = prompt('Inserisci uno dei numeri che hai visto prima');
-        finalUserResult += userResult + ' ';
+        let userResult = prompt('Inserisci uno dei numeri che hai visto prima');
+        finalUserResult.push(userResult);
     }
     console.log(finalUserResult);
 }, 5000);
 
 
 
-//| dopodicché bisogna far apparire, per 5 volte, un prompt in cui si domanda all'utente di inserire un numero
 
 //# se l'utente ha scritto il numero corretto segnarlo
 //# altrimenti dire che ha sbagliato
