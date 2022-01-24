@@ -22,13 +22,24 @@ let result = 0;
 let finalResult = '';
 for (let i = 0; i < 5; i++) {
     result = getRandomNumber(1, 100);
-    finalResult += result + ', ';
+    finalResult += result + ' ';
 }
+console.log(finalResult);
 
 //| mostro il risultato all'utente: questi saranno i numeri che dovrà ricordarsi
 const resultElement = alert(`I numeri che devi ricordare sono: ${finalResult}`);
 
 //| dopo che l'utente preme "ok" dovrà partire un timer di TOT secondi
+
+setTimeout(resultElement => {
+    let userResult;
+    let finalUserResult = '';
+    for (let k = 0; k < 5; k++) {
+        userResult = prompt('Inserisci uno dei numeri che hai visto prima');
+        finalUserResult += userResult + ' ';
+    }
+    console.log(finalUserResult);
+}, 5000);
 
 
 
